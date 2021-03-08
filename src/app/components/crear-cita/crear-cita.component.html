@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-body">
+    <div class="card-title text-center h4">Agregar cita</div>
+    <div class="form-group">
+      <label class="pl-2 mt-2" for="nombre">Nombre</label>
+      <input
+        type="text"
+        class="form-control pl-2"
+        placeholder="Ingrese su nombre"
+        id="nombre"
+        [(ngModel)]="nombre"
+      />
+      <label class="mt-2 pl-2" for="fecha">Fecha</label>
+      <input
+        class="form-control pl-2"
+        type="date"
+        id="fecha"
+        [(ngModel)]="fecha"
+      />
+      <label for="hora" class="mt-2 pl-2">Hora</label>
+      <input
+        class="form-control pl-2"
+        type="time"
+        id="hora"
+        [(ngModel)]="hora"
+      />
+      <label class="mt-2 pl-2" for="sintomas">Sintomas</label>
+      <textarea
+        type="text-area"
+        class="form-control pl-2"
+        id="sintomas"
+        row="3"
+        placeholder="Ingrese los sintomas"
+        [(ngModel)]="sintomas"
+      ></textarea>
+      <button (click)="agregarCita()" class="btn btn-block btn-primary mt-2">
+        Agregar cita
+      </button>
+      <span
+        *ngIf="formularioIncorrecto"
+        class="badge bg-danger text-light pl-2 text-center col-12"
+        >Todos los campos son obligatorios</span
+      >
+    </div>
+  </div>
+</div>
